@@ -3,6 +3,7 @@
 #include <SFML/System.hpp>
 #include <SFML/Main.hpp>
 #include <iostream>
+#include "container.h"
 
 int WinMain()
 {
@@ -11,6 +12,10 @@ int WinMain()
 
     while (gameWindow.isOpen())
     {
+        gameWindow.clear(sf::Color::Red);
+
+        drawContainer(gameWindow);
+
         sf::Event event;
         while (gameWindow.pollEvent(event))
         {
@@ -19,7 +24,6 @@ int WinMain()
                 gameWindow.close();
         }
 
-        gameWindow.clear(sf::Color::Red);
         gameWindow.display();
     }
 
